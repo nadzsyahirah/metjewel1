@@ -3,6 +3,8 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
 
+const cust = require('../models/custdata');
+
 //User model
 const User = require('../models/User');
 
@@ -94,6 +96,18 @@ router.get('/logout', (req, res) => {
     req.logout();
     req.flash('success_msg', 'You are logged out');
     res.redirect('/users/login');
+});
+
+//delet function
+router.get('/delete/:id', (req, res) => {
+    cust.findByIdAndRemove(req.params.id, (err, doc) => {
+        if(!err) {
+            req.flash('success_msg', 'Data has been deleted');
+            res.redirect('/dashboard');
+        } else {
+            console.log('Error in deleting data:' + err);
+        }
+    });
 });
 
 module.exports = router;

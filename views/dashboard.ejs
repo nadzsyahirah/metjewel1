@@ -1,9 +1,17 @@
 
-<div class="position-relative">
+<!--<div class="container">-->
+
+  <div class="dblogo">
+    <img src="/images/logo.png" class="mjlogodb" alt="metjewellogo">
+  </div>
+  
+  <div class="font1">
 <h1 class="mt-4">MetJewel's Customers Form</h1>
 <p class="lead mb-3">Welcome <%= name %></p>
-<a href="/users/logout" class="btn btn-secondary">Logout</a>
+
 </div>
+<a href="/users/logout" class="btn btn-primary">Logout</a>
+
 
 <br>
 <br>
@@ -17,7 +25,8 @@
 
 <!--TEST TABLE-->
 
-<table class="table table-striped table-hover">
+<div class="table-responsive">
+<table class="table table-dark table-striped table align-middle table-hover">
     <thead>
       <tr>
         <th scope="col">ID</th>
@@ -61,6 +70,6 @@
 
 <% }) %>
 
-    
+    <!--</div>-->
     </tbody>
   </table>
